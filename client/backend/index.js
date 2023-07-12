@@ -14,6 +14,11 @@ app.use('/api/management', require('./routes/management'));
 app.use('/api/scoreboard', require('./routes/scoreboard'));
 
 
+app.get("/", (req, res) => {
+  res.render("index.html");
+});
+
+
 console.log(process.env.MONGODB_URI);
 
 mongoose.connect(process.env.MONGODB_URI, {
